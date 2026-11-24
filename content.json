@@ -24,13 +24,14 @@
   ],
   "projects": [
     {
-      "title": "Enhanced ones",
+      "title": "Compressing visuals",
       "type": "Commercial",
-      "about": "A promotional film for a global logistics company.",
-      "image": "https://raulvisuals.net/_assets/video/daa08d56f463a5eb32c454d13c520ec5.jpg",
-      "preview": "https://raulvisuals.net/_assets/video/4520d75448a25660dd2e18f74334bbd5.mp4",
+      "about": "A promotional film for a global compression company, done right.",
+      "image": "/assets/uploads/screenshot-2026-11-24-at-10.53.01.png",
+      "preview": "https://youtu.be/R0SDasadAww",
       "from": 10,
-      "video": "https://raulvisuals.net/_assets/video/4520d75448a25660dd2e18f74334bbd5.mp4"
+      "video": "https://raulvisuals.net/_assets/video/4520d75448a25660dd2e18f74334bbd5.mp4",
+      "youtube": "https://youtu.be/R0SDasadAww"
     },
     {
       "title": "Coffee shop charisma",
