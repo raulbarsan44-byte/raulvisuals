@@ -1,0 +1,63 @@
+# Admin page setup (Decap CMS). You never need to edit this file.
+backend:
+  name: github
+  repo: raulbarsan44-byte/raulvisuals
+  branch: main
+
+# Lets the admin page work on this computer for testing (ignored online)
+local_backend: true
+
+media_folder: assets/uploads   # where uploaded photos/clips are stored
+public_folder: /assets/uploads
+
+site_url: https://raulvisuals.net
+display_url: https://raulvisuals.net
+
+collections:
+  - name: site
+    label: Website
+    editor: { preview: false }
+    files:
+      - name: content
+        label: Website content
+        file: content.json
+        format: json
+        fields:
+          - label: Projects
+            name: projects
+            widget: list
+            summary: "{{fields.title}} · {{fields.type}}"
+            hint: Drag to change the order. The first project shows at the top.
+            fields:
+              - { label: Title, name: title, widget: string }
+              - { label: Label, name: type, widget: string, hint: "e.g. Commercial, Brand film, Event film, AI" }
+              - { label: Short description, name: about, widget: text, required: false, hint: "Shown when the video opens. One or two sentences." }
+              - { label: Thumbnail picture, name: image, widget: image, hint: "A still from the video. Landscape (16:9) looks best." }
+              - { label: Hover preview clip, name: preview, widget: file, required: false, hint: "Short muted clip (2–3 seconds, under ~2 MB) that plays when the mouse is over the tile." }
+              - { label: Preview start (seconds), name: from, widget: number, required: false, value_type: int, min: 0, hint: "Only if your clip is long and the good part starts later. Leave empty for short clips." }
+              - { label: YouTube link (full video), name: youtube, widget: string, required: false, hint: "Paste the YouTube link. Recommended for full-length videos." }
+              - { label: Full video file, name: video, widget: file, required: false, hint: "Only if the video isn't on YouTube. Keep it under 50 MB." }
+
+          - label: Top of page
+            name: name
+            widget: string
+            hint: Your name, shown big at the top.
+          - { label: Small line above your name, name: role, widget: string }
+          - { label: Intro sentence, name: intro, widget: text }
+          - { label: Top background picture, name: heroImage, widget: image, hint: "Shown while the video loads." }
+          - { label: Top background video, name: heroVideo, widget: file, required: false, hint: "Muted, looping. 10–25 seconds, under ~15 MB." }
+
+          - { label: About title, name: aboutTitle, widget: string }
+          - { label: About text, name: about, widget: text, hint: "Leave an empty line between paragraphs." }
+          - { label: About photo, name: aboutImage, widget: image }
+          - { label: Skills, name: skills, widget: list, field: { label: Skill, name: skill, widget: string } }
+
+          - { label: Email, name: email, widget: string }
+          - { label: Phone, name: phone, widget: string }
+          - label: Social links
+            name: links
+            widget: list
+            summary: "{{fields.label}}"
+            fields:
+              - { label: Name, name: label, widget: string, hint: "e.g. Instagram, YouTube, Vimeo" }
+              - { label: Link, name: url, widget: string }

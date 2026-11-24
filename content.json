@@ -1,0 +1,70 @@
+{
+  "name": "Raul Bârsan",
+  "role": "Video editor & videographer — Romania",
+  "intro": "I direct, shoot and cut visual stories with rhythm, for brands, events and artists.",
+  "heroImage": "https://raulvisuals.net/_assets/media/1d2e489cc026635c5c778a45a958f658.png",
+  "heroVideo": "https://raulvisuals.net/_assets/video/de5202e6c18c14578154a32e19461185.mp4",
+  "aboutTitle": "Movement is my language.",
+  "about": "Years of working with movement taught me how a body reads on camera: where to put the lens, when to cut, and how to pace a scene so it breathes.\n\nI bring that to every project. I direct talent, move the camera with intention and build edits that feel as good as they look. My background in 2D/3D animation and digital art shapes the rest.",
+  "aboutImage": "https://raulvisuals.net/_assets/media/8f79a10346140e7c39f0f930eab91929.png",
+  "skills": [
+    "Directing",
+    "Videography",
+    "Editing",
+    "Colour",
+    "Sound",
+    "AI visuals"
+  ],
+  "email": "raulvisuals3@gmail.com",
+  "phone": "+40 748 967 672",
+  "links": [
+    {
+      "label": "YouTube",
+      "url": "https://www.youtube.com/@raulbarsan8582/videos"
+    }
+  ],
+  "projects": [
+    {
+      "title": "Enhanced",
+      "type": "Commercial",
+      "about": "A promotional film for a global logistics company.",
+      "image": "https://raulvisuals.net/_assets/video/daa08d56f463a5eb32c454d13c520ec5.jpg",
+      "preview": "https://raulvisuals.net/_assets/video/4520d75448a25660dd2e18f74334bbd5.mp4",
+      "from": 10,
+      "video": "https://raulvisuals.net/_assets/video/4520d75448a25660dd2e18f74334bbd5.mp4"
+    },
+    {
+      "title": "Coffee shop charisma",
+      "type": "Brand film",
+      "about": "Directing movement artists to bring energy and character to a local coffee shop.",
+      "image": "https://raulvisuals.net/_assets/video/04406ae14420fdb5fbed08a708b24a8b.jpg",
+      "preview": "https://raulvisuals.net/_assets/video/43e2442d1b2f6d2ff6bdcac3d7b06af2.mp4",
+      "from": 6,
+      "video": "https://raulvisuals.net/_assets/video/43e2442d1b2f6d2ff6bdcac3d7b06af2.mp4"
+    },
+    {
+      "title": "U.N.I.T.Y",
+      "type": "Event film",
+      "about": "A weekend of performances, shot to follow the energy on stage and in the crowd.",
+      "image": "https://raulvisuals.net/_assets/video/e34f872d2ceb2316943fdf5ec2c32ebd.jpg"
+    },
+    {
+      "title": "Undecided client",
+      "type": "Commercial",
+      "about": "A pub ad for a client with a few too many requests, and a cut that still lands.",
+      "image": "https://raulvisuals.net/_assets/video/17fbfe4b0a9d43066e39c5b0fac58cf3.jpg"
+    },
+    {
+      "title": "AI short film",
+      "type": "AI",
+      "about": "A short film made entirely with AI tools.",
+      "image": "https://raulvisuals.net/_assets/video/af56672ebf208560d0e4171e21d16916.jpg"
+    },
+    {
+      "title": "A cozy space",
+      "type": "Commercial",
+      "about": "Warm, slow and inviting: an ad for an interior space.",
+      "image": "https://raulvisuals.net/_assets/video/a7ba7a1cc827fd18c730d3f19939a2c8.jpg"
+    }
+  ]
+}
