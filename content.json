@@ -52,10 +52,12 @@
       "youtube": "https://vimeo.com/1249605107?fl=pl&fe=sh"
     },
     {
-      "title": "Undecided client",
+      "title": "Fairy tale clothes ",
       "type": "Commercial",
-      "about": "A pub ad for a client with a few too many requests, and a cut that still lands.",
-      "image": "https://raulvisuals.net/_assets/video/17fbfe4b0a9d43066e39c5b0fac58cf3.jpg"
+      "about": "A clothing presentation project, created by imagination, love for music and visuals.",
+      "image": "/assets/uploads/screenshot-2026-11-24-at-15.04.11.png",
+      "preview": "/assets/uploads/aitrim.mp4",
+      "video": "/assets/uploads/final-ai-1.2.mp4"
     },
     {
       "title": "AI short film",
