@@ -43,10 +43,12 @@
       "video": "https://raulvisuals.net/_assets/video/43e2442d1b2f6d2ff6bdcac3d7b06af2.mp4"
     },
     {
-      "title": "U.N.I.T.Y",
-      "type": "Event film",
+      "title": "Bumbastion",
+      "type": "AFTERMOVIE",
       "about": "A weekend of performances, shot to follow the energy on stage and in the crowd.",
-      "image": "https://raulvisuals.net/_assets/video/e34f872d2ceb2316943fdf5ec2c32ebd.jpg"
+      "image": "/assets/uploads/screenshot-2026-11-24-at-11.39.04.png",
+      "preview": "/assets/uploads/trimmm4.mov",
+      "video": "https://vimeo.com/1249605107?fl=pl&fe=sh"
     },
     {
       "title": "Undecided client",
