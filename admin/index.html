@@ -1,12 +1,230 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="robots" content="noindex">
-  <title>Site Admin</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Raul Bârsan — Video Editor & Videographer</title>
+<meta name="description" content="Raul Bârsan — video editor and videographer.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;800&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0b0b0b; --fg:#f2efe9; --muted:#8f8b84; --line:#232323; --accent:#ff5b1f;
+    --display:'Syne', system-ui, sans-serif; --body:'Inter', system-ui, sans-serif;
+    --gutter:clamp(16px,5vw,80px);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--fg);font-family:var(--body);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+  img,video{display:block;max-width:100%}
+  a{color:inherit;text-decoration:none}
+  .wrap{padding:0 var(--gutter)}
+  .label{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+
+  /* NAV */
+  nav{position:fixed;inset:0 0 auto 0;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:22px var(--gutter);mix-blend-mode:difference}
+  .logo{font-family:var(--display);font-weight:800;font-size:18px}
+  nav ul{list-style:none;display:flex;gap:28px;font-size:14px}
+  @media (max-width:480px){nav ul{gap:16px;font-size:13px}.logo{font-size:15px}}
+
+  /* HERO */
+  .hero{position:relative;height:100svh;min-height:520px;display:flex;align-items:flex-end;overflow:hidden}
+  .hero img,.hero video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,11,11,.2) 30%,rgba(11,11,11,.92) 100%)}
+  .hero-inner{position:relative;z-index:2;width:100%;padding:0 var(--gutter) clamp(36px,7vh,80px)}
+  .hero h1{font-family:var(--display);font-weight:800;font-size:clamp(40px,12vw,190px);line-height:.86;letter-spacing:-.045em;text-transform:uppercase;margin:14px 0 24px}
+  .hero p{max-width:440px;color:#d6d2cb;font-size:clamp(15px,1.3vw,18px)}
+
+  /* WORK */
+  section{padding:clamp(80px,11vw,150px) 0}
+  .head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:40px;border-bottom:1px solid var(--line);padding-bottom:16px}
+  .head h2{font-family:var(--display);font-weight:600;font-size:clamp(22px,2vw,28px);letter-spacing:-.02em}
+  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(20px,3vw,48px) clamp(16px,2vw,32px)}
+  @media (max-width:700px){.grid{grid-template-columns:1fr}}
+  .tile{cursor:pointer}
+  .frame{position:relative;aspect-ratio:16/9;border-radius:4px;overflow:hidden;background:#151515}
+  .frame img,.frame video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .frame img{transition:opacity .4s, transform 1s cubic-bezier(.2,.8,.2,1)}
+  .frame video{opacity:0;transition:opacity .4s}
+  .tile.playing .frame video{opacity:1}
+  .tile.playing .frame img{opacity:0}
+  .tile:hover .frame img{transform:scale(1.03)}
+  .row{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding-top:14px}
+  .row h3{font-family:var(--display);font-weight:600;font-size:clamp(17px,1.4vw,21px);letter-spacing:-.01em}
+  .row span{font-size:13px;color:var(--muted)}
+
+  /* ABOUT */
+  .about{display:grid;grid-template-columns:4fr 6fr;gap:clamp(32px,7vw,120px);align-items:center}
+  .about img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:4px;filter:grayscale(1)}
+  .about h2{font-family:var(--display);font-weight:800;font-size:clamp(32px,4.4vw,64px);line-height:1;letter-spacing:-.035em;margin:16px 0 28px}
+  .about p{color:#c4c0b9;font-size:clamp(16px,1.2vw,18px);max-width:560px;margin-bottom:16px}
+  .skills{display:flex;flex-wrap:wrap;gap:8px;margin-top:28px}
+  .skills span{font-size:13px;border:1px solid var(--line);padding:7px 14px;border-radius:999px;color:#d6d2cb}
+  @media (max-width:800px){.about{grid-template-columns:1fr}.about img{max-width:360px}}
+
+  /* CONTACT */
+  .contact{text-align:center}
+  .contact h2{font-family:var(--display);font-weight:800;font-size:clamp(30px,8.5vw,128px);line-height:.9;letter-spacing:-.045em;text-transform:uppercase;margin:20px 0 40px}
+  .contact h2 a:hover{color:var(--accent)}
+  .links{display:flex;justify-content:center;gap:28px;flex-wrap:wrap;font-size:15px}
+  .links a{border-bottom:1px solid var(--line);padding-bottom:2px;transition:border-color .2s}
+  .links a:hover{border-color:var(--accent)}
+  footer{border-top:1px solid var(--line);padding:24px var(--gutter);display:flex;justify-content:space-between;font-size:13px;color:var(--muted)}
+
+  /* PLAYER */
+  .lb{position:fixed;inset:0;z-index:100;background:rgba(5,5,5,.95);display:none;align-items:center;justify-content:center;padding:var(--gutter)}
+  .lb.open{display:flex}
+  .lb-box{width:min(1100px,100%)}
+  .lb-media{aspect-ratio:16/9;background:#000;border-radius:4px;overflow:hidden}
+  .lb-media>*{width:100%;height:100%;border:0;object-fit:contain}
+  .lb-info{display:flex;justify-content:space-between;gap:24px;margin-top:18px;flex-wrap:wrap}
+  .lb-info h3{font-family:var(--display);font-size:26px;letter-spacing:-.02em}
+  .lb-info p{color:var(--muted);max-width:520px}
+  .lb-close{position:absolute;top:18px;right:var(--gutter);width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:none;color:var(--fg);font-size:22px;cursor:pointer}
+  .lb-close:hover{background:var(--accent);border-color:var(--accent)}
+</style>
 </head>
 <body>
-  <script src="https://unpkg.com/decap-cms@3.17.3/dist/decap-cms.js"></script>
+
+<nav>
+  <a href="#" class="logo">raul.visuals</a>
+  <ul><li><a href="#work">Work</a></li><li><a href="#about">About</a></li><li><a href="#contact">Contact</a></li></ul>
+</nav>
+
+<header class="hero">
+  <img id="heroImg" alt="">
+  <video id="heroVid" autoplay muted loop playsinline></video>
+  <div class="hero-inner">
+    <div class="label" id="role"></div>
+    <h1 id="name"></h1>
+    <p id="intro"></p>
+  </div>
+</header>
+
+<section id="work" class="wrap">
+  <div class="head"><h2>Selected work</h2><span class="label" id="hint">Hover to preview</span></div>
+  <div class="grid" id="grid"></div>
+</section>
+
+<section id="about" class="wrap">
+  <div class="about">
+    <img id="aboutImg" alt="Portrait">
+    <div>
+      <div class="label">About</div>
+      <h2 id="aboutTitle"></h2>
+      <div id="aboutText"></div>
+      <div class="skills" id="skills"></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact wrap">
+  <div class="label">Have a project in mind?</div>
+  <h2><a id="mail">Let's work<br>together</a></h2>
+  <div class="links" id="links"></div>
+</section>
+
+<footer><span id="copy"></span><a href="#">Back to top ↑</a></footer>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true">
+  <button class="lb-close" id="lbClose" aria-label="Close">×</button>
+  <div class="lb-box">
+    <div class="lb-media" id="lbMedia"></div>
+    <div class="lb-info"><div><div class="label" id="lbType"></div><h3 id="lbTitle"></h3></div><p id="lbAbout"></p></div>
+  </div>
+</div>
+
+<script>
+(async () => {
+  const $ = id => document.getElementById(id);
+  // All text, photos and videos come from content.json (edited through /admin)
+  const S = await fetch('content.json', { cache: 'no-cache' }).then(r => r.json());
+
+  // Fill text
+  $('heroImg').src = S.heroImage;
+  if (S.heroVideo) { $('heroVid').src = S.heroVideo; $('heroVid').poster = S.heroImage; } else $('heroVid').remove();
+  $('role').textContent = S.role;
+  $('name').innerHTML = S.name.split(' ').join('<br>');
+  $('intro').textContent = S.intro;
+  $('aboutImg').src = S.aboutImage;
+  $('aboutTitle').textContent = S.aboutTitle;
+  $('aboutText').innerHTML = (S.about || '').split(/\n\s*\n/).map(p => `<p>${p}</p>`).join('');
+  $('skills').innerHTML = (S.skills || []).map(s => `<span>${s}</span>`).join('');
+  $('mail').href = 'mailto:' + S.email;
+  $('links').innerHTML =
+    `<a href="mailto:${S.email}">${S.email}</a><a href="tel:${S.phone.replace(/\s/g,'')}">${S.phone}</a>` +
+    (S.links || []).map(l => `<a href="${l.url}" target="_blank" rel="noopener">${l.label}</a>`).join('');
+  $('copy').textContent = `© ${new Date().getFullYear()} ${S.name}`;
+
+  // Project tiles with hover preview
+  const PREVIEW_SECONDS = 3;
+  const isLink = u => /youtu\.?be|vimeo\.com/.test(u || '');
+  const touch = matchMedia('(hover: none)').matches;
+  if (touch) $('hint').textContent = 'Tap to watch';
+
+  S.projects.forEach(p => {
+    const t = document.createElement('article');
+    t.className = 'tile';
+    t.innerHTML = `<div class="frame"><img loading="lazy" src="${p.image}" alt="${p.title}"></div>
+      <div class="row"><h3>${p.title}</h3><span>${p.type}</span></div>`;
+    const frame = t.querySelector('.frame');
+    let v;
+    if (p.preview && !isLink(p.preview)) {
+      v = document.createElement('video');
+      v.muted = true; v.playsInline = true; v.preload = 'none';
+      v.src = p.preview;
+      const start = p.from || 0;
+      v.addEventListener('timeupdate', () => { if (v.currentTime > start + PREVIEW_SECONDS) v.currentTime = start; });
+      frame.appendChild(v);
+      t._play = () => { v.currentTime = start; v.play().then(() => t.classList.add('playing')).catch(()=>{}); };
+      t._stop = () => { v.pause(); t.classList.remove('playing'); };
+      if (!touch) {
+        t.addEventListener('mouseenter', t._play);
+        t.addEventListener('mouseleave', t._stop);
+      }
+    }
+    t.addEventListener('click', () => openPlayer(p));
+    $('grid').appendChild(t);
+  });
+
+  // On phones (no hover), play previews as tiles scroll into view
+  if (touch) {
+    const io = new IntersectionObserver(es => es.forEach(e => {
+      const t = e.target; if (!t._play) return;
+      e.isIntersecting ? t._play() : t._stop();
+    }), { threshold: .6 });
+    document.querySelectorAll('.tile').forEach(t => io.observe(t));
+  }
+
+  // Full video player
+  // Turns a YouTube or Vimeo link into an embedded player address (or null)
+  function embedUrl(url){
+    if (!url) return null;
+    let m = url.match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?(?:.*&)?v=|shorts\/|embed\/|live\/))([\w-]{11})/);
+    if (m) return `https://www.youtube.com/embed/${m[1]}?autoplay=1&rel=0`;
+    m = url.match(/vimeo\.com\/(?:video\/)?(\d+)(?:\/([\da-f]+))?/);
+    if (m) {
+      const h = m[2] || (url.match(/[?&]h=([\da-f]+)/) || [])[1];
+      return `https://player.vimeo.com/video/${m[1]}?autoplay=1${h ? '&h=' + h : ''}`;
+    }
+    return null;
+  }
+  function openPlayer(p){
+    let html = `<img src="${p.image}" alt="">`;
+    // YouTube/Vimeo link wins, even if it was pasted into a file field by mistake
+    const embed = embedUrl(p.youtube) || embedUrl(p.video) || embedUrl(p.preview);
+    if (embed) html = `<iframe src="${embed}" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>`;
+    else if (p.video) html = `<video src="${p.video}" controls autoplay playsinline></video>`;
+    $('lbMedia').innerHTML = html;
+    $('lbTitle').textContent = p.title; $('lbType').textContent = p.type; $('lbAbout').textContent = p.about || '';
+    $('lb').classList.add('open'); document.body.style.overflow = 'hidden';
+  }
+  function closePlayer(){ $('lb').classList.remove('open'); $('lbMedia').innerHTML=''; document.body.style.overflow=''; }
+  $('lbClose').onclick = closePlayer;
+  $('lb').addEventListener('click', e => { if (e.target === $('lb')) closePlayer(); });
+  addEventListener('keydown', e => { if (e.key === 'Escape') closePlayer(); });
+})();
+</script>
 </body>
 </html>
